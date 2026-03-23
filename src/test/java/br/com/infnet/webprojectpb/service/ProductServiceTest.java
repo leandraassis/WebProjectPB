@@ -30,6 +30,7 @@ public class ProductServiceTest {
         product2 = new Product(2L, "Casaco", 120.0, 90);
     }
 
+
     //consultProductsDb
     @Test
     void testConsultProductsDb_ReturnsList() {
