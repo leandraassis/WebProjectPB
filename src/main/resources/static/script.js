@@ -10,12 +10,13 @@ async function loadProducts() {
 
     products.forEach(product => {
         const li = document.createElement("li");
+        li.className = "d-flex justify-content-between align-items-center bg-white border rounded p-3";
         li.innerHTML = `
-        <span class="product-info">${product.name} - R$ ${product.price} - ${product.quantity}</span>
-        <div>
-            <button onclick="editProduct(${product.id})">Editar</button>
-            <button onclick="deleteProduct(${product.id})">Excluir</button>
-        </div>
+            <span class="product-info">${product.name} | R$ ${product.price} | Qtd: ${product.quantity}</span>
+            <div class="d-flex gap-2">
+                <button class="btn btn-outline-warning btn-sm" onclick="editProduct(${product.id})">Editar</button>
+                <button class="btn btn-outline-danger btn-sm" onclick="deleteProduct(${product.id})">Excluir</button>
+            </div>
     `;
         list.appendChild(li);
     });
